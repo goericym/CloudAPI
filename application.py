@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
-app = Flask(__name__)
-api = Api(app)
+application = Flask(__name__)
+api = Api(application)
 
 
 class HelloWorld(Resource):
@@ -12,4 +12,4 @@ class HelloWorld(Resource):
 api.add_resource(HelloWorld, '/')
 
 if __name__ == '__main__':
-    app.run(port=80)
+    application.run(port=80)
