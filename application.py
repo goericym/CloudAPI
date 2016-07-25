@@ -2,8 +2,8 @@ from flask import Flask
 from flask_restful import Resource
 from flask_restful import Api
 from flask import render_template
-from flask import url_for
-application = Flask(__name__, static_url_path='')
+
+application = Flask(__name__)
 api = Api(application)
 
 
@@ -15,7 +15,6 @@ class HelloWorld(Resource):
 
 @application.route('/index/')
 def index():
-    # url_for('static/css', filename='style.css')
     return render_template('index.html')
 
 api.add_resource(HelloWorld, '/')
